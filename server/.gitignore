@@ -5,7 +5,6 @@
 .env.**.production
 .yarn
 yarn.lock
-yarn.lock
 .yarnrc.yml
 dist
 build
