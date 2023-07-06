@@ -6,6 +6,6 @@ ReactJs, NodeJs, Express, Sequelize, Material UI
 ~yarn install
 ~yarn start
 
-#SERVER
+# SERVER
 ~npm install --save-dev cross-env
 ~npm start
