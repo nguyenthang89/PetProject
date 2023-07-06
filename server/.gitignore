@@ -3,7 +3,11 @@
 .env.production
 .env.production.**
 .env.**.production
-
+.yarn
+yarn.lock
+yarn.lock
+.yarnrc.yml
 dist
 build
 node_modules
+server/yarn.lock

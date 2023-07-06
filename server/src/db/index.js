@@ -13,7 +13,12 @@ export const sequelize = new Sequelize({
   username: process.env.APP_DB_AUTH_USER,
   password: process.env.APP_DB_AUTH_PASSWORD,
   timezone: process.env.APP_TIMEZONE,
-  
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false
+    }
+  },
   retry: { max: 3 },
   schema: process.env.APP_DB_SCHEMA
 });
@@ -25,11 +30,11 @@ export const sequelize = new Sequelize({
 
     const containerPath = path.resolve(process.cwd(), 'src', 'db', 'models');
     const models = fs.readdirSync(containerPath);
-    Promise.all(
-      models
-        .filter(file => _.endsWith(file, '.js'))
-        .map(file => import(path.resolve(containerPath, file)))
-    ).then(() => sequelize.sync({ alter: true }));
+    // Promise.all(
+    //   models
+    //     .filter(file => _.endsWith(file, '.js'))
+    //     .map(file => import(path.resolve(containerPath, file)))
+    // ).then(() => sequelize.sync({ alter: true }));
   } catch (err) {
     console.error('Failed to configure database connection!', err);
   }
