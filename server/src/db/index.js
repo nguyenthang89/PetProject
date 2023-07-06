@@ -30,11 +30,11 @@ export const sequelize = new Sequelize({
 
     const containerPath = path.resolve(process.cwd(), 'src', 'db', 'models');
     const models = fs.readdirSync(containerPath);
-    // Promise.all(
-    //   models
-    //     .filter(file => _.endsWith(file, '.js'))
-    //     .map(file => import(path.resolve(containerPath, file)))
-    // ).then(() => sequelize.sync({ alter: true }));
+    Promise.all(
+      models
+        .filter(file => _.endsWith(file, '.js'))
+        .map(file => import(path.resolve(containerPath, file)))
+    ).then(() => sequelize.sync({ alter: true }));
   } catch (err) {
     console.error('Failed to configure database connection!', err);
   }
