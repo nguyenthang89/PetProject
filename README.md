@@ -3,9 +3,9 @@ ReactJs, NodeJs, Express, Sequelize, Material UI
 
 # CLIENT SETUP
 cd client <br />
-yarn install _ _
-yarn start _ _
+yarn install <br />
+yarn start <br />
 
 # SERVER
-npm install --save-dev cross-env _ _
-npm start _ _
+npm install --save-dev cross-env <br />
+npm start <br />
