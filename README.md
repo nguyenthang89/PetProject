@@ -2,6 +2,7 @@
 ReactJs, NodeJs, Express, Sequelize, Material UI
 
 # CLIENT SETUP
+npm i yarn <br />
 cd client folder <br />
 yarn install <br />
 yarn start <br />
